@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imageDiscussion"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:background="@drawable/background_image"
+        android:scaleType="centerCrop"
+        app:riv_oval="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/viewSupporter"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageDiscussion"
+        app:layout_constraintStart_toEndOf="@id/imageDiscussion"
+        app:layout_constraintTop_toTopOf="@id/imageDiscussion"/>
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/primary_text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/viewSupporter"
+        app:layout_constraintEnd_toStartOf="@id/textLocation"
+        app:layout_constraintStart_toEndOf="@id/imageDiscussion"/>
+
+    <TextView
+        android:id="@+id/textLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:paddingStart="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/secondary_text"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/textTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/viewSupporter"/>
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/secondary_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/textMessage"
+        app:layout_constraintStart_toEndOf="@id/imageDiscussion"
+        app:layout_constraintTop_toBottomOf="@id/viewSupporter"/>
+
+    <TextView
+        android:id="@+id/textMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:paddingStart="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/secondary_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textName"
+        app:layout_constraintTop_toBottomOf="@id/viewSupporter"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

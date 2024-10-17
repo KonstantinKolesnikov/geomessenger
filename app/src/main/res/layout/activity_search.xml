@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SearchActivity"
+    android:background="@color/primary">
+
+    <View
+        android:id="@+id/viewSupporter"
+        android:layout_width="55dp"
+        android:layout_height="65dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBack"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/viewSupporter"
+        android:tint="@color/white"/>
+
+    <EditText
+        android:id="@+id/inputSearch"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/background_input"
+        android:hint="Поиск"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:paddingStart="21dp"
+        android:paddingEnd="21dp"
+        android:textColor="@color/primary_text"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@id/viewSupporter"
+        app:layout_constraintEnd_toStartOf="@id/imageSearch"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/viewSupporter"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageSearch"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintStart_toEndOf="@id/inputSearch"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/viewSupporter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/viewSupporter"
+        app:layout_constraintLeft_toLeftOf="parent">
+        <RadioButton
+            android:id="@+id/myLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Около меня"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/selectLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="Выбрать локацию"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textRadius"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="15dp"
+        android:text="Радиус(м):"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textDiscussions"/>
+
+    <EditText
+        android:id="@+id/inputRadius"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/background_input"
+        android:hint="Радиус"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:paddingStart="21dp"
+        android:paddingEnd="21dp"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/textRadius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintBottom_toTopOf="@id/textDiscussions"/>
+
+    <TextView
+        android:id="@+id/textDiscussions"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Места"
+        app:layout_constraintTop_toBottomOf="@id/inputRadius"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textConversations"/>
+
+    <TextView
+        android:id="@+id/textConversations"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="Люди"
+        app:layout_constraintTop_toBottomOf="@id/inputRadius"
+        app:layout_constraintStart_toEndOf="@id/textDiscussions"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/searchFragmentView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:name="com.example.geomessenger.activities.SearchDiscussionsFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textConversations"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

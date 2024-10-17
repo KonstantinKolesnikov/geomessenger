@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_add_discussion"
+            android:icon="@drawable/ic_add"
+            android:title="Добавить дискуссию"/>
+
+        <item
+            android:id="@+id/nav_add_place_notification"
+            android:icon="@drawable/ic_place"
+            android:title="Уведомления по локации"/>
+
+    </group>
+
+    <item
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Выйти из аккаунта"/>
+        </menu>
+    </item>
+
+</menu>
